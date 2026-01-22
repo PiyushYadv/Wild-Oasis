@@ -38,6 +38,7 @@ export async function createEditCabin(newCabin, id) {
   }
 
   // 2. Upload image
+  if (hasImagePath) return data;
   // const file = await fetch(newCabin.image).then((res) => res.blob());
   const { error: storageError } = await supabase.storage
     .from("cabin-images")
