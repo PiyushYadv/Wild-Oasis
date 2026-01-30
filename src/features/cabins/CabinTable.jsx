@@ -1,8 +1,8 @@
 import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
-import { Table } from "../../ui/Table";
-import { Menus } from "../../ui/Menus";
+import Table from "../../ui/Table";
+import Menus from "../../ui/Menus";
 
 function CabinTable() {
   const { cabins, isPending } = useCabins();
@@ -21,7 +21,7 @@ function CabinTable() {
         </Table.Header>
         <Table.Body
           data={cabins}
-          render={(cabin) => <CabinRow cabin={cabin} />}
+          render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
     </Menus>
