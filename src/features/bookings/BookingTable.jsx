@@ -1,9 +1,17 @@
 import BookingRow from "./BookingRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import Empty from "../../ui/Empty";
+import { useBookings } from "./useBookings";
+import Spinner from "../../../../../../../../../Downloads/ultimate-react-course-main/17-the-wild-oasis/final-6-final/src/ui/Spinner";
 
 function BookingTable() {
-  const bookings = [];
+  const { bookings, isPending } = useBookings();
+
+  if (isPending) return <Spinner />;
+
+  if (!bookings.length) return <Empty resourceName={"bookings"} />;
+  console.log(bookings);
 
   return (
     <Menus>
