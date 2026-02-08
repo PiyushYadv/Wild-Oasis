@@ -4,6 +4,7 @@ import Menus from "../../ui/Menus";
 import Empty from "../../ui/Empty";
 import { useBookings } from "./useBookings";
 import Spinner from "../../../../../../../../../Downloads/ultimate-react-course-main/17-the-wild-oasis/final-6-final/src/ui/Spinner";
+import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
   const { bookings, isPending } = useBookings();
@@ -32,6 +33,9 @@ function BookingTable() {
           )}
         />
       </Table>
+      <Table.Footer>
+        <Pagination count={15} />
+      </Table.Footer>
     </Menus>
   );
 }
