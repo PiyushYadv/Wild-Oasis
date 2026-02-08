@@ -7,7 +7,7 @@ import Spinner from "../../../../../../../../../Downloads/ultimate-react-course-
 import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
-  const { bookings, isPending } = useBookings();
+  const { bookings, isPending, count } = useBookings();
 
   if (isPending) return <Spinner />;
 
@@ -34,7 +34,7 @@ function BookingTable() {
         />
       </Table>
       <Table.Footer>
-        <Pagination count={15} />
+        <Pagination count={count} />
       </Table.Footer>
     </Menus>
   );
