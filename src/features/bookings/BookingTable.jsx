@@ -12,7 +12,6 @@ function BookingTable() {
   if (isPending) return <Spinner />;
 
   if (!bookings.length) return <Empty resourceName={"bookings"} />;
-  console.log(bookings);
 
   return (
     <Menus>
