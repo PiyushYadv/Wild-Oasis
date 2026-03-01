@@ -1,7 +1,4 @@
 // Search for: 'jo', 'fa', 'mar', 'emm', 'ah'
-
-import { id } from "date-fns/locale";
-
 export const guests = [
   {
     // id: 1000,
