@@ -38,7 +38,7 @@ const Discount = styled.div`
 
 export function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
-  const { createCabin } = useCreateCabin();
+  const { isCreating, createCabin } = useCreateCabin();
 
   const { id: cabinId, name, maxCapacity, regularPrice, discount } = cabin;
 
@@ -72,6 +72,7 @@ export function CabinRow({ cabin }) {
               <Menus.List id={cabinId}>
                 <Menus.Button
                   icon={<HiSquare2Stack />}
+                  disabled={isCreating}
                   onClick={handleDuplicate}
                 >
                   Duplicate
